@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{{ title }} | {{ metadata.title }}</title>
+	<meta name="description" content="{{ description or metadata.description }}">
+
+	{% include "source/_includes/site-components/head-meta-tags.njk" %}
+
+	{% include "source/_includes/site-components/head-css-tags.njk" %}
+</head>
+<body>
+
+{% include "source/_includes/site-components/header.njk" %}
+
+<main>
+	{{ content | safe }}
+</main>
+
+{% include "source/_includes/site-components/footer.njk" %}
+
+{% include "source/_includes/site-components/footer-js-tags.njk" %}
+
+</body>
+</html>
