@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: "Processes"
+permalink: /processes/
+parentLink: processes
+---
+
+<div id="homepage-banner" class="text-center mb-5">
+	<h2 class="">Processes</h2>
+</div>
+
+<div class="container">
+	{% set postslist = collections.processes %}
+	{% set postslistCounter = collections.processes | length %}
+	{% include "source/pages/page-components/listing-process.njk" %}
+
+</div><!-- end container -->

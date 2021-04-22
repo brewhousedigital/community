@@ -1,0 +1,14 @@
+[
+	{"name": "Participants", "number": 109, "size": "large", "col": 4},
+	{"name": "Processes", "number": 4, "size": "large", "col": 4},
+	{"name": "Assemblies", "number": 7, "size": "large", "col": 4},
+	{"name": "Conferences", "number": 4, "size": "large", "col": 4},
+	{"name": "Proposals", "number": 103, "size": "large", "col": 4},
+	{"name": "Accepted Proposals", "number": 19, "size": "large", "col": 4},
+	{"name": "Results", "number": 10, "size": "large", "col": 4},
+	{"name": "Debates", "number": 23, "size": "large", "col": 4},
+	{"name": "Conversations", "number": 3, "size": "large", "col": 4},
+	{"name": "Meetings", "number": 40, "size": "large", "col": 4},
+	{"name": "Endorsements", "number": 93, "size": "large", "col": 4},
+	{"name": "Surveys", "number": 170, "size": "large", "col": 4}
+]

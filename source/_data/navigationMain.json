@@ -1,0 +1,8 @@
+[
+	{"name": "Home", "url": "/", "key": "home"},
+	{"name": "Processes", "url": "/processes/", "key": "processes"},
+	{"name": "Assemblies", "url": "/assemblies/", "key": "assemblies"},
+	{"name": "Calendars", "url": "/calendars/", "key": "calendars"},
+	{"name": "Help", "url": "/help/", "key": "help"},
+	{"name": "Blog", "url": "/blog/", "key": "blog"}
+]

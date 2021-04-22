@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: "Assemblies"
+permalink: /assemblies/
+parentLink: assemblies
+---
+
+<div id="homepage-banner" class="text-center mb-5">
+	<h2 class="">Assemblies</h2>
+</div>
+
+<div class="container">
+	{% set postslist = collections.assemblies %}
+	{% set postslistCounter = collections.assemblies | length %}
+	{% include "source/pages/page-components/listing-assembly.njk" %}
+
+</div><!-- end container -->

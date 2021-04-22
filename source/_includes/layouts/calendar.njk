@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+permalink: /calendars/{{ title|slugURL }}-{{ date|slugURL }}/
+---
+
+{% if titleBackground|length == 0 %}
+{% set titleBackground = "default.jpg" %}
+{% endif %}
+
+<div id="post-header" class="" style="background-image: url('/images/calendars/{{ titleBackground }}');">
+	<div class="container">
+		<h1 class="display-1">{{ title }}</h1>
+		<p>{{ description }}</p>
+		<h2>{{ eventDate }}</h2>
+	</div><!-- end container -->
+</div><!-- end post header -->
+
+<div class="bg-clouds sticky-top mb-5">
+<nav id="post-navigation" class="container" aria-label="Calendar Navigation">
+	<a href="#post-introduction" class="btn">Introduction</a>
+	<a href="#post-program" class="btn">Program</a>
+	<a href="#post-registration" class="btn">Registration</a>
+</nav>
+</div><!-- end bg grey -->
+
+<div class="container calendar-post">
+	<div class="pb-5 border-bottom mb-5">
+		{{ content | safe }}
+	</div><!-- end spacing -->
+
+	{#<ul>
+		{%- set nextPost = collections.calendars | getNextCollectionItem(page) %}
+		{%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+		{%- set previousPost = collections.calendars | getPreviousCollectionItem(page) %}
+		{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+	</ul>#}
+</div><!-- end container -->
+
+
+<script>
+
+</script>

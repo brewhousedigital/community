@@ -1,10 +1,33 @@
-<header class="container">
-	<div class="row align-items-center justify-content-between py-3 mb-5">
-		<h1 class="col-auto mb-0"><a href="/">{{ metadata.title }}</a></h1>
+<header class="bg-yellow">
+	<div class="container">
+		<div class="row align-items-center justify-content-between py-3">
+			<h1 class="col-auto mb-0">
+				<a href="/" class="text-decoration-none">Community Plano</a>
+			</h1>
 
-		<div class="col-auto">
-			<a href="/posts/" class="btn btn-primary">Posts</a>
-			<a href="/about/" class="btn btn-primary">About</a>
-		</div>
-	</div><!-- end row -->
-</header><!-- end container -->
+			<div class="col-auto">
+				<div class="input-group">
+					<input type="text"
+						   class="form-control"
+						   style="max-width: 300px;"
+						   placeholder="Search Site"
+						   aria-label="Search Site"
+						   aria-describedby="header-search-btn">
+					<button class="btn btn-secondary" type="button" id="header-search-btn">{% icon "search" %}</button>
+				</div><!-- end input group -->
+			</div><!-- end col -->
+		</div><!-- end row -->
+	</div><!-- end container -->
+</header><!-- end header  -->
+
+<div class="bg-black">
+	<div class="container">
+		<nav class="nav nav-pills nav-fill" aria-label="Site Navigation">
+			{% for item in navigationMain %}
+				<a class="nav-link py-3 {{ "active" if parentLink == item.key }}"
+				   href="{{ item.url }}"
+					{{ "aria-current=page" if parentLink == item.key }}>{{ item.name }}</a>
+			{% endfor %}
+		</nav>
+	</div><!-- end container -->
+</div><!-- end background -->

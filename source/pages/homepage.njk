@@ -2,22 +2,60 @@
 layout: layouts/base.njk
 title: "Home"
 permalink: /
+parentLink: home
 ---
 
+<div id="homepage-banner" class="text-center mb-5">
+	<h2 class="">Welcome to <span class="d-lg-block"></span>Community Plano</h2>
+</div>
 
 <div class="container">
-	<h1 class="mb-5">You are running an awesome 11ty site</h1>
+	{% include 'source/pages/page-components/latest-3-calendars.njk' %}
 
-	<div class="row pb-5 border-bottom mb-5">
-		<div class="col-lg-6">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet ipsum lacus, non finibus nisi congue quis. Phasellus gravida justo id metus aliquam pretium. Proin rhoncus pretium ligula, at semper felis feugiat et. Nulla vestibulum leo ex, non molestie sem tempor vel. Integer vel accumsan dolor. Suspendisse quam quam, bibendum eu ullamcorper eget, imperdiet at felis. Quisque at ultricies odio. Etiam sollicitudin eros ut risus molestie tristique. Nam ullamcorper ut quam et mollis.</p>
+
+	{% include 'source/pages/page-components/latest-3-processes.njk' %}
+
+
+	{% include 'source/pages/page-components/latest-3-assemblies.njk' %}
+
+
+	<h1 class="mb-5">How do I take part in a process?</h1>
+
+	<div class="row text-center pb-5 border-bottom mb-5">
+		<div class="col-lg-4">
+			<div>{% icon "geo-alt" %}</div>
+			<h2>Meetings</h2>
+			<p>Find out where and when you can participate in public meetings.</p>
 		</div><!-- end col -->
 
-		<div class="col-lg-6">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet ipsum lacus, non finibus nisi congue quis. Phasellus gravida justo id metus aliquam pretium. Proin rhoncus pretium ligula, at semper felis feugiat et. Nulla vestibulum leo ex, non molestie sem tempor vel. Integer vel accumsan dolor. Suspendisse quam quam, bibendum eu ullamcorper eget, imperdiet at felis. Quisque at ultricies odio. Etiam sollicitudin eros ut risus molestie tristique. Nam ullamcorper ut quam et mollis.</p>
+		<div class="col-lg-4">
+			<div>{% icon "chat" %}</div>
+			<h2>Debates</h2>
+			<p>Debate and discuss, share your views and enrich the relevant topics.</p>
+		</div><!-- end col -->
+
+		<div class="col-lg-4">
+			<div>{% icon "clipboard" %}</div>
+			<h2>Proposals</h2>
+			<p>Make proposals, support existing ones and promote the changes you want to see.</p>
 		</div><!-- end col -->
 	</div><!-- end row -->
 
-	{# This is an example of a page component #}
-	{% include 'source/pages/page-components/latest-3-posts.njk' %}
+
+	<h1 class="mb-5">Current state of Community Plano Participatory Space</h1>
+
+	<div class="pb-5 border-bottom mb-5">
+	<div class="row text-center justify-content-center mx-auto" style="max-width: 525px">
+		{% for item in homepageCurrentState %}
+			<div class="col-lg-{{ item.col }} mb-5">
+				<p class="text-uppercase text-muted fw-bold small">{{ item.name }}</p>
+				<p class="display-4 fw-bold">{{ item.number }}</p>
+			</div><!-- end col -->
+		{% endfor %}
+	</div><!-- end row -->
+	</div><!-- end spacing -->
+
+
+
+	{#{% include 'source/pages/page-components/latest-3-posts.njk' %}#}
 </div><!-- end container -->

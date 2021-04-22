@@ -99,6 +99,81 @@ module.exports = function(eleventyConfig) {
 		return fs.readFileSync(iconName).toString();
 	});
 
+	eleventyConfig.addShortcode("stringify", function(object) {
+		const getCircularReplacer = () => {
+			const seen = new WeakSet();
+			return (key, value) => {
+				if (typeof value === "object" && value !== null) {
+					if (seen.has(value)) {
+						return;
+					}
+					seen.add(value);
+				}
+				return value;
+			};
+		};
+
+		return JSON.stringify(object, getCircularReplacer(), 4);
+	});
+
+
+
+
+	// Download Document code
+	eleventyConfig.addShortcode("downloadDocument", function(title, description, url) {
+		let iconName = "node_modules/bootstrap-icons/icons/cloud-arrow-down.svg";
+		let icon = fs.readFileSync(iconName).toString();
+
+		return `
+		<li class="list-group-item d-flex justify-content-between align-items-center">
+			<div class="ms-2 me-auto">
+				<div class="fw-bold">${title}</div>
+				<div>${description}</div>
+			</div>
+
+			<a href="${url}" target="_blank" class="btn btn-outline-primary btn-sm download-file-btn ms-3" aria-label="Download">
+				${icon}
+			</a>
+		</li>
+		`;
+	});
+
+
+
+
+	// Accordion Code
+	// Nunjucks Shortcode
+	eleventyConfig.addPairedNunjucksShortcode("accordion", function(content, title, parent) {
+		let accordionID = slugify(title, {
+			replacement: '-',
+			remove: undefined,
+			lower: true,
+			strict: true
+		});
+
+		return `
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="accordion-header-${accordionID}">
+				<button class="accordion-button collapsed"
+					    type="button"
+					    data-bs-toggle="collapse"
+					    data-bs-target="#accordion-${accordionID}"
+					    aria-expanded="false"
+					    aria-controls="accordion-${accordionID}">${title}</button>
+			</h2>
+
+			<div id="accordion-${accordionID}"
+				 class="accordion-collapse collapse"
+				 aria-labelledby="accordion-header-${accordionID}"
+				 data-bs-parent="${parent}">
+				<div class="accordion-body py-4">
+					${content}
+				</div><!-- end padding -->
+			</div><!-- end collapse -->
+		</div><!-- end item -->
+		`;
+	});
+
 
 
 

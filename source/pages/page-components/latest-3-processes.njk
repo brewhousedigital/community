@@ -1,0 +1,12 @@
+<div class="pb-5 border-bottom mb-5">
+	<h1>Latest 3 Processes</h1>
+
+	<div class="mb-5">
+		{% set postslist = collections.processes | head(-3) %}
+		{% set postslistCounter = collections.processes | length %}
+
+		{% include "source/pages/page-components/listing-process.njk" %}
+	</div>
+
+	<p class="text-center">More events can be found on the  <a href="{{ '/processes/' }}">processes page</a>.</p>
+</div>

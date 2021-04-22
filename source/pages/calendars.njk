@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: "Calendars"
+permalink: /calendars/
+parentLink: calendars
+---
+
+<div id="homepage-banner" class="text-center mb-5">
+	<h2 class="">Calendars</h2>
+</div>
+
+<div class="container">
+	{% set postslist = collections.calendars %}
+	{% set postslistCounter = collections.calendars | length %}
+	{% include "source/pages/page-components/listing-calendar.njk" %}
+
+</div><!-- end container -->

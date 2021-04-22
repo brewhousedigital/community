@@ -1,0 +1,12 @@
+<div class="pb-5 border-bottom mb-5">
+	<h1>Latest 3 Calendar Events</h1>
+
+	<div class="mb-5">
+		{% set postslist = collections.calendars | head(-3) %}
+		{% set postslistCounter = collections.calendars | length %}
+
+		{% include "source/pages/page-components/listing-calendar.njk" %}
+	</div>
+
+	<p class="text-center">More events can be found on the  <a href="{{ '/calendars/' }}">calendars page</a>.</p>
+</div>
